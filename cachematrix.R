@@ -1,5 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Calculates the inverse of a matrix x. Checks a cache to see if the inverse 
+## has been previously calculated for the same matrix and if so, returns the
+## cached value. If not found in cache, calculates the inverse and caches it. 
 
 ## Creates a matrix-like object that can cache its own inverse.
 
@@ -26,9 +27,8 @@ cacheSolve <- function(x) {
         	message("getting cached data")
         	return(i)
         }
-        data <- x$get()
-        i <- solve(x)
+        data <- x$getmatrix()
+        i <- solve(data)
         x$setinverse(i)
         i
 }
-
